@@ -1,0 +1,394 @@
+{
+ "figs": [
+  [
+   "2.1",
+   "Project-specific AI/ML life cycle of PneumoScope (dashed = designed, not yet automated)"
+  ],
+  [
+   "2.2",
+   "CRISP-DM phases applied to the Kermany chest X-ray data"
+  ],
+  [
+   "4.1",
+   "Stakeholder map of PneumoScope"
+  ],
+  [
+   "4.2",
+   "Stakeholder influence\u2013interest matrix"
+  ],
+  [
+   "5.1",
+   "Data lineage from raw archive to deployed model bundle"
+  ],
+  [
+   "5.2",
+   "MLflow tracking UI: experiment runs, including nested Optuna trials (screenshot)"
+  ],
+  [
+   "5.3",
+   "MLflow run comparison of the four models in the \u2018baseline-comparison\u2019 experiment (screenshot)"
+  ],
+  [
+   "6.1",
+   "Class and sub-type distribution of the Kermany dataset"
+  ],
+  [
+   "6.2",
+   "Histograms of image attributes by class"
+  ],
+  [
+   "6.3",
+   "Box plots of selected attributes by class (points beyond the whiskers are IQR outliers)"
+  ],
+  [
+   "6.4",
+   "Sample training images: normal, bacterial and viral pneumonia"
+  ],
+  [
+   "6.5",
+   "Pearson correlation heat map of image attributes and the label"
+  ],
+  [
+   "7.1",
+   "Correct-classification rate and referral rate by sub-type (test set)"
+  ],
+  [
+   "8.1",
+   "Before-and-after comparison: raw image, normalised input, pixel distributions and learned feature vector"
+  ],
+  [
+   "8.2",
+   "PCA projection of the 2048-d training features coloured by class"
+  ],
+  [
+   "8.3",
+   "Preprocessing pipeline from upload to features"
+  ],
+  [
+   "9.1",
+   "Console output of `python -m scripts.baseline_models` (genuine run)"
+  ],
+  [
+   "9.2",
+   "Training and validation loss of the final MC-Dropout head (early stopping)"
+  ],
+  [
+   "10.1",
+   "Optuna optimisation history (25 trials, model v1.1.0)"
+  ],
+  [
+   "10.2",
+   "Hyperparameter importance (fANOVA) for validation NLL"
+  ],
+  [
+   "10.3",
+   "Validation NLL against each hyperparameter (slice plots)"
+  ],
+  [
+   "11.1",
+   "Patient-disjoint data-splitting strategy"
+  ],
+  [
+   "11.2",
+   "Confusion matrix of the final model on the test set"
+  ],
+  [
+   "11.3",
+   "ROC and precision\u2013recall curves of the final model (test set)"
+  ],
+  [
+   "11.4",
+   "Reliability diagram before and after temperature scaling (test set)"
+  ],
+  [
+   "11.5",
+   "Accuracy on automatically decided cases versus the percentage referred (test set)"
+  ],
+  [
+   "11.6",
+   "Test accuracy, recall, F1 and ROC-AUC of the four models"
+  ],
+  [
+   "11.7",
+   "Distribution of predictive entropy for correct and wrong test predictions"
+  ],
+  [
+   "11.8",
+   "Examples of the most confident false negatives and false positives"
+  ],
+  [
+   "12.1",
+   "Deployment architecture"
+  ],
+  [
+   "12.2",
+   "FastAPI OpenAPI endpoint listing from the running service"
+  ],
+  [
+   "12.3",
+   "Health check, rejected unauthenticated request (401) and sign-in"
+  ],
+  [
+   "12.4",
+   "Successful prediction request and rejection of a non-image upload"
+  ],
+  [
+   "12.5",
+   "Docker execution evidence: running containers (backend healthy) and image sizes"
+  ],
+  [
+   "12.6",
+   "Automated test execution: 39 tests passed"
+  ],
+  [
+   "12.7",
+   "Web application: result screen with prediction, uncertainty, REFER/AUTO decision and Grad-CAM"
+  ],
+  [
+   "12.8",
+   "Web application: dashboard with totals, recent analyses and model status"
+  ],
+  [
+   "12.9",
+   "Web application: sign-in page"
+  ],
+  [
+   "13.1",
+   "Brightness distribution: training reference, test split and simulated drift"
+  ],
+  [
+   "13.2",
+   "Proposed CI/CD workflow (not yet executed on GitHub)"
+  ],
+  [
+   "14.1",
+   "Grad-CAM from the deployed model: three correct cases and one confident miss"
+  ],
+  [
+   "15.1",
+   "Planned versus actual project timeline (weeks)"
+  ]
+ ],
+ "tabs": [
+  [
+   "1.1",
+   "Measurable project objectives"
+  ],
+  [
+   "1.2",
+   "Project scope: included and excluded items"
+  ],
+  [
+   "2.1",
+   "Life-cycle stages and project artefacts"
+  ],
+  [
+   "2.2",
+   "Comparison of conventional software and AI/ML development in this project"
+  ],
+  [
+   "2.3",
+   "CRISP-DM phase mapping"
+  ],
+  [
+   "2.4",
+   "Framework comparison"
+  ],
+  [
+   "3.1",
+   "Hardware and software feasibility"
+  ],
+  [
+   "3.2",
+   "Economic feasibility estimate"
+  ],
+  [
+   "3.3",
+   "Requirements specification"
+  ],
+  [
+   "3.4",
+   "Four-dimensional feasibility matrix"
+  ],
+  [
+   "4.1",
+   "Stakeholder classification"
+  ],
+  [
+   "4.2",
+   "Stakeholder interests, influence and expectations"
+  ],
+  [
+   "4.3",
+   "Stakeholder conflict analysis"
+  ],
+  [
+   "5.1",
+   "Dataset information"
+  ],
+  [
+   "5.2",
+   "Data lineage steps"
+  ],
+  [
+   "5.3",
+   "Version history"
+  ],
+  [
+   "5.4",
+   "Versioning tools used"
+  ],
+  [
+   "6.1",
+   "Data quality assessment across five dimensions"
+  ],
+  [
+   "6.2",
+   "Descriptive statistics of image attributes (n = 5,856)"
+  ],
+  [
+   "6.3",
+   "Outlier counts by the IQR and Z-score methods"
+  ],
+  [
+   "6.4",
+   "Data quality issues and remediation"
+  ],
+  [
+   "7.1",
+   "Data minimisation decisions"
+  ],
+  [
+   "7.2",
+   "Bias assessment"
+  ],
+  [
+   "7.3",
+   "Fairlearn subgroup metrics on the test set (DPD resolution = 0.52, EOD resolution = 0.50; DPD format = 0.30, EOD format = 0.07)"
+  ],
+  [
+   "7.4",
+   "Data ethics checklist"
+  ],
+  [
+   "8.1",
+   "Feature engineering summary"
+  ],
+  [
+   "9.1",
+   "Candidate models"
+  ],
+  [
+   "9.2",
+   "Model selection matrix (scores 1\u20135, chosen on validation data only)"
+  ],
+  [
+   "9.3",
+   "Baseline (Logistic Regression) results"
+  ],
+  [
+   "9.4",
+   "Candidate model comparison on the validation split"
+  ],
+  [
+   "10.1",
+   "Learned parameters versus hyperparameters"
+  ],
+  [
+   "10.2",
+   "Hyperparameter search space"
+  ],
+  [
+   "10.3",
+   "Optuna study configuration and result"
+  ],
+  [
+   "10.4",
+   "MLflow experiments and run IDs"
+  ],
+  [
+   "10.5",
+   "What MLflow tracks in this project"
+  ],
+  [
+   "10.6",
+   "Before-and-after optimisation comparison (test set)"
+  ],
+  [
+   "10.7",
+   "Computational cost versus benefit"
+  ],
+  [
+   "11.1",
+   "Effect of patient leakage on test results"
+  ],
+  [
+   "11.2",
+   "Model comparison on the test set (n = 837)"
+  ],
+  [
+   "12.1",
+   "Contents of the model bundle"
+  ],
+  [
+   "12.2",
+   "API endpoint specification (15 operations, from the live OpenAPI schema)"
+  ],
+  [
+   "12.3",
+   "Deployment test results"
+  ],
+  [
+   "13.1",
+   "Monitoring plan"
+  ],
+  [
+   "13.2",
+   "Drift detection results"
+  ],
+  [
+   "13.3",
+   "Retraining decision criteria"
+  ],
+  [
+   "14.1",
+   "Responsible AI assessment"
+  ],
+  [
+   "14.2",
+   "Risk mitigation recommendations"
+  ],
+  [
+   "15.1",
+   "Project milestones"
+  ],
+  [
+   "15.2",
+   "Team roles and responsibilities"
+  ],
+  [
+   "15.3",
+   "Team contribution matrix (L = lead, C = contributor, S = support)"
+  ],
+  [
+   "15.4",
+   "Risk register (L = likelihood, I = impact: H/M/L)"
+  ],
+  [
+   "15.5",
+   "Final results summary"
+  ],
+  [
+   "15.6",
+   "Success criteria assessment"
+  ],
+  [
+   "15.7",
+   "Submission checklist"
+  ],
+  [
+   "15.8",
+   "Software tools: implemented, proposed and not applicable"
+  ]
+ ]
+}
