@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colour tokens (RGB triples). Light by default; .theme-dark switches the app area. */
+:root {
+  --c-canvas: 247 247 244; --c-surface: 255 255 255; --c-subtle: 250 250 248;
+  --c-ink: 32 39 37; --c-ink-soft: 58 66 64; --c-muted: 116 123 120; --c-muted-light: 154 160 157;
+  --c-line: 229 231 227; --c-line-strong: 213 217 211;
+  --c-brand-50: 239 244 241; --c-brand-100: 221 232 227; --c-brand-200: 187 208 198; --c-brand-500: 59 106 93;
+  --c-brand-600: 46 90 79; --c-brand-700: 36 72 63; --c-brand-800: 27 55 48; --c-brand-900: 19 40 34;
+  --c-sage: 130 151 139; --c-sage-light: 201 211 205;
+  --c-warn: 154 106 22; --c-warn-bg: 251 245 232; --c-warn-line: 235 217 178;
+  --c-danger: 161 70 60; --c-danger-bg: 250 239 237; --c-danger-line: 237 207 202;
+  --c-ok: 60 115 84; --c-ok-bg: 238 245 240; --c-ok-line: 203 224 210;
+}
+.theme-dark {
+  --c-canvas: 12 11 10; --c-surface: 30 27 25; --c-subtle: 44 40 37;
+  --c-ink: 245 242 238; --c-ink-soft: 214 208 201; --c-muted: 163 155 147; --c-muted-light: 124 117 110;
+  --c-line: 62 57 53; --c-line-strong: 84 78 72;
+  --c-brand-50: 66 40 26; --c-brand-100: 88 50 30; --c-brand-200: 120 66 38; --c-brand-500: 251 150 92;
+  --c-brand-600: 247 128 72; --c-brand-700: 240 108 56; --c-brand-800: 220 92 44; --c-brand-900: 186 74 32;
+  --c-sage: 176 166 156; --c-sage-light: 92 86 80;
+  --c-warn: 251 191 36; --c-warn-bg: 66 50 16; --c-warn-line: 110 84 28;
+  --c-danger: 248 113 113; --c-danger-bg: 70 28 28; --c-danger-line: 112 44 44;
+  --c-ok: 110 231 183; --c-ok-bg: 20 56 44; --c-ok-line: 38 96 74;
+  color: rgb(var(--c-ink));
+  color-scheme: dark;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    font-size: 14px;
+    line-height: 1.55;
+    font-feature-settings: "cv11", "ss01";
+  }
+  /* Static, fixed paper-grain texture. No animation. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.38;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.15  0 0 0 0 0.14  0 0 0 0.055 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  #root { position: relative; z-index: 1; }
+  h1, h2, h3, h4 { @apply font-display text-ink; letter-spacing: -0.012em; }
+  ::selection { background: #DDE8E3; }
+  :focus-visible { outline: 2px solid #3B6A5D; outline-offset: 2px; border-radius: 4px; }
+  input[type="range"] { accent-color: #24483F; }
+}
+
+@layer components {
+  /* min-w-0: inside CSS grids a wide table must scroll within the card, not stretch the page. */
+  .card { @apply min-w-0 rounded-lg border border-line bg-surface shadow-card; }
+  .card-pad { @apply p-5 sm:p-6; }
+  .section-title { @apply font-display text-[15px] font-semibold text-ink; }
+  .eyebrow { @apply text-2xs font-semibold uppercase tracking-[0.12em] text-muted; }
+  .label { @apply mb-1.5 block text-[13px] font-medium text-ink-soft; }
+  .input {
+    @apply block w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-[14px] text-ink
+      placeholder:text-muted-light transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+  .input-error { @apply border-danger focus:border-danger focus:ring-danger-bg; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-[13.5px] font-medium transition-colors
+      disabled:cursor-not-allowed disabled:opacity-50 whitespace-nowrap;
+  }
+  .btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800; }
+  .btn-secondary { @apply btn border border-line-strong bg-surface text-ink hover:bg-subtle hover:border-muted-light; }
+  .btn-ghost { @apply btn text-ink-soft hover:bg-brand-50 hover:text-brand-700; }
+  .btn-danger { @apply btn border border-danger-line bg-surface text-danger hover:bg-danger-bg; }
+  .btn-sm { @apply px-3 py-1.5 text-[12.5px]; }
+  .table-base { @apply w-full border-collapse text-left text-[13px]; }
+  .table-base th { @apply border-b border-line bg-subtle px-4 py-2.5 text-2xs font-semibold uppercase tracking-wider text-muted; }
+  .table-base td { @apply border-b border-line px-4 py-3 align-middle; }
+  .table-base tbody tr:last-child td { @apply border-b-0; }
+  .table-base tbody tr { @apply transition-colors hover:bg-subtle; }
+  .num { font-variant-numeric: tabular-nums; }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(36,72,63,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(36,72,63,0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .grid-fade { -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); }
+  .prose-doc h1 { @apply mb-4 text-2xl font-semibold; }
+  .prose-doc h2 { @apply mb-2 mt-8 border-b border-line pb-2 text-lg font-semibold; }
+  .prose-doc h3 { @apply mb-2 mt-5 text-[15px] font-semibold; }
+  .prose-doc p { @apply my-3 leading-relaxed text-ink-soft; }
+  .prose-doc ul { @apply my-3 list-disc space-y-1.5 pl-5 text-ink-soft; }
+  .prose-doc ol { @apply my-3 list-decimal space-y-1.5 pl-5 text-ink-soft; }
+  .prose-doc strong { @apply font-semibold text-ink; }
+  .prose-doc code { @apply rounded bg-subtle px-1 py-0.5 font-mono text-[12.5px] text-brand-800; }
+  .prose-doc blockquote { @apply my-4 rounded-md border border-warn-line bg-warn-bg px-4 py-3 text-[13px] text-ink-soft; }
+  .prose-doc blockquote p { @apply m-0; }
+  .prose-doc table { @apply my-4 w-full border-collapse text-[13px]; }
+  .prose-doc th { @apply border border-line bg-subtle px-3 py-2 text-left font-semibold; }
+  .prose-doc td { @apply border border-line px-3 py-2 align-top text-ink-soft; }
+  .prose-doc em { @apply text-muted; }
+}
+
+@media print {
+  aside, header, .no-print { display: none !important; }
+  body::before { display: none; }
+}
+
+/* ===== Dark glass theme for the signed-in app (reference: dark cinematic dashboard) ===== */
+.theme-dark .card {
+  border-radius: 26px;
+  border-color: rgba(255, 255, 255, 0.09);
+  background: linear-gradient(160deg, rgba(40, 36, 33, 0.62), rgba(20, 18, 16, 0.55));
+  -webkit-backdrop-filter: blur(22px) saturate(1.2);
+  backdrop-filter: blur(22px) saturate(1.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 40px -24px rgba(0, 0, 0, 0.7);
+}
+.theme-dark .input { background-color: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.14); color: rgb(var(--c-ink)); }
+.theme-dark .btn-secondary { background-color: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.16); border-radius: 999px; }
+.theme-dark .btn-secondary:hover { background-color: rgba(255, 255, 255, 0.12); }
+.theme-dark .btn-primary { border-radius: 999px; box-shadow: 0 8px 20px -10px rgba(240, 108, 56, 0.8); }
+.theme-dark .btn-danger { background-color: rgba(255, 255, 255, 0.04); border-radius: 999px; }
+.theme-dark .table-base th { background-color: rgba(255, 255, 255, 0.04); }
+.theme-dark .table-base tbody tr:hover { background-color: rgba(255, 255, 255, 0.04); }
+.theme-dark ::selection { background: rgba(240, 108, 56, 0.4); }
+.theme-dark input[type="range"], .theme-dark input[type="checkbox"] { accent-color: rgb(240 108 56); }
