@@ -1,0 +1,37 @@
+{
+ "triage": {
+  "id": "cbd12b84e21d4dce9042fc537e029232",
+  "created_at": "2026-11-19T14:43:46.004073",
+  "prediction": "PNEUMONIA",
+  "pneumonia_probability": 0.9994176526790602,
+  "normal_probability": 0.0005823473209397578,
+  "uncertainty": 0.007097711696744977,
+  "decision": "AUTO",
+  "decision_reason": "Uncertainty is below the referral threshold.",
+  "referral_threshold": 0.535179,
+  "model_version": "v1.1.0",
+  "processing_ms": 374.6892269991804,
+  "image_width": 1344,
+  "image_height": 968,
+  "image_url": "/analysis/cbd12b84e21d4dce9042fc537e029232/image",
+  "gradcam_url": null,
+  "disclaimer": "Educational research application. Not a clinically validated diagnostic system. Results must be reviewed by a qualified professional."
+ },
+ "model_info": {
+  "available": true,
+  "status": "Ready",
+  "message": "Model loaded",
+  "name": "ResNet-50 pneumonia classifier",
+  "version": "v1.1.0",
+  "architecture": "ResNet-50",
+  "training_dataset": "Kermany Pediatric Chest X-Ray",
+  "trained_at": "2026-11-17T14:16:07.618186+00:00",
+  "referral_threshold": 0.535179,
+  "calibrated": true
+ },
+ "gradcam_status": 200,
+ "pytest_tail": "============================= 39 passed in 14.54s =============================",
+ "pytest_count": 39,
+ "docker_ps": "NAMES                  IMAGE                STATUS                  PORTS\npneumonia-frontend-1   pneumonia-frontend   Up 10 hours             0.0.0.0:8080->80/tcp, [::]:8080->80/tcp\npneumonia-backend-1    pneumonia-backend    Up 10 hours (healthy)   8000/tcp\n",
+ "docker_images": "REPOSITORY                                    TAG         SIZE\npneumonia-frontend                            latest      75.4MB\npneumonia-backend                             latest      2.49GB"
+}
