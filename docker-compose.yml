@@ -1,0 +1,27 @@
+# Run the whole app:   docker compose up --build
+# Open:                http://127.0.0.1:8080
+services:
+  backend:
+    build: ./backend
+    environment:
+      ARTIFACTS_DIR: /srv/artifacts
+      VAR_DIR: /srv/backend/var          # SQLite database + uploaded images
+      MODEL_VERSION: ${MODEL_VERSION:-v1.1.0}
+      CORS_ORIGINS: http://127.0.0.1:8080,http://localhost:8080
+      TORCH_THREADS: ${TORCH_THREADS:-4}
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY in .env}   # signs login sessions
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}                       # optional first account
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ADMIN_NAME: ${ADMIN_NAME:-Administrator}
+    volumes:
+      - ./artifacts:/srv/artifacts:ro    # trained model + evaluation results
+      - backend_data:/srv/backend/var
+    expose: ["8000"]
+
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["8080:80"]
+
+volumes:
+  backend_data:
