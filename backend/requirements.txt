@@ -1,0 +1,22 @@
+# Web application (runtime)
+# Install PyTorch CPU wheels first (smaller, no CUDA):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.5
+torchvision>=0.20
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+sqlalchemy>=2.0
+pydantic>=2.8
+pydantic-settings>=2.4
+email-validator>=2.2
+bcrypt>=4.2
+pyjwt>=2.9
+numpy>=1.26
+pillow>=10.4
+scikit-learn>=1.5
+scipy>=1.13
+opencv-python-headless>=4.10
+# tests
+pytest>=8.3
+httpx>=0.27
