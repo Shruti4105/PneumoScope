@@ -1,0 +1,666 @@
+{
+  "key": "kermany",
+  "generated_at": "2026-11-17T13:28:10.009105+00:00",
+  "total_images": 5856,
+  "total_patients": 3189,
+  "class_distribution": {
+    "PNEUMONIA": 4273,
+    "NORMAL": 1583
+  },
+  "subtype_distribution": {
+    "bacterial": 2780,
+    "normal": 1583,
+    "viral": 1493
+  },
+  "original_folder_split": [
+    {
+      "split": "test",
+      "images": 624,
+      "normal": 234,
+      "pneumonia": 390
+    },
+    {
+      "split": "train",
+      "images": 5232,
+      "normal": 1349,
+      "pneumonia": 3883
+    }
+  ],
+  "patient_disjoint_split": {
+    "method": "StratifiedGroupKFold (groups = patient ID), seed 42",
+    "splits": [
+      {
+        "split": "train",
+        "images": 4182,
+        "patients": 2278,
+        "normal": 1130,
+        "pneumonia": 3052
+      },
+      {
+        "split": "val",
+        "images": 837,
+        "patients": 457,
+        "normal": 226,
+        "pneumonia": 611
+      },
+      {
+        "split": "test",
+        "images": 837,
+        "patients": 454,
+        "normal": 227,
+        "pneumonia": 610
+      }
+    ],
+    "overlap": {
+      "patients_train_test_overlap": 0,
+      "patients_train_val_overlap": 0,
+      "patients_val_test_overlap": 0,
+      "test_images_from_train_patients": 0,
+      "test_images": 837
+    }
+  },
+  "flawed_split": {
+    "method": "StratifiedShuffleSplit at image level (ignores patient ID), seed 42",
+    "splits": [
+      {
+        "split": "train",
+        "images": 4182,
+        "patients": 2542,
+        "normal": 1131,
+        "pneumonia": 3051
+      },
+      {
+        "split": "val",
+        "images": 837,
+        "patients": 738,
+        "normal": 226,
+        "pneumonia": 611
+      },
+      {
+        "split": "test",
+        "images": 837,
+        "patients": 709,
+        "normal": 226,
+        "pneumonia": 611
+      }
+    ],
+    "overlap": {
+      "patients_train_test_overlap": 373,
+      "patients_train_val_overlap": 391,
+      "patients_val_test_overlap": 160,
+      "test_images_from_train_patients": 481,
+      "test_images": 837
+    }
+  },
+  "images_per_patient": {
+    "mean": 1.8363123236124177,
+    "median": 1.0,
+    "max": 31,
+    "patients_with_multiple_images": 1175
+  },
+  "dimensions": {
+    "width": {
+      "min": 384,
+      "median": 1281.0,
+      "max": 2916
+    },
+    "height": {
+      "min": 127,
+      "median": 888.0,
+      "max": 2713
+    },
+    "aspect_ratio_median": 1.4158853938491194,
+    "width_histogram": [
+      {
+        "bin_lower": 384.0,
+        "bin_upper": 510.6,
+        "count": 61
+      },
+      {
+        "bin_lower": 510.6,
+        "bin_upper": 637.2,
+        "count": 20
+      },
+      {
+        "bin_lower": 637.2,
+        "bin_upper": 763.8,
+        "count": 79
+      },
+      {
+        "bin_lower": 763.8,
+        "bin_upper": 890.4,
+        "count": 280
+      },
+      {
+        "bin_lower": 890.4,
+        "bin_upper": 1017.0,
+        "count": 793
+      },
+      {
+        "bin_lower": 1017.0,
+        "bin_upper": 1143.6,
+        "count": 778
+      },
+      {
+        "bin_lower": 1143.6,
+        "bin_upper": 1270.1999999999998,
+        "count": 830
+      },
+      {
+        "bin_lower": 1270.1999999999998,
+        "bin_upper": 1396.8,
+        "count": 733
+      },
+      {
+        "bin_lower": 1396.8,
+        "bin_upper": 1523.3999999999999,
+        "count": 655
+      },
+      {
+        "bin_lower": 1523.3999999999999,
+        "bin_upper": 1650.0,
+        "count": 528
+      },
+      {
+        "bin_lower": 1650.0,
+        "bin_upper": 1776.6,
+        "count": 428
+      },
+      {
+        "bin_lower": 1776.6,
+        "bin_upper": 1903.1999999999998,
+        "count": 286
+      },
+      {
+        "bin_lower": 1903.1999999999998,
+        "bin_upper": 2029.8,
+        "count": 161
+      },
+      {
+        "bin_lower": 2029.8,
+        "bin_upper": 2156.3999999999996,
+        "count": 96
+      },
+      {
+        "bin_lower": 2156.3999999999996,
+        "bin_upper": 2283.0,
+        "count": 45
+      },
+      {
+        "bin_lower": 2283.0,
+        "bin_upper": 2409.6,
+        "count": 31
+      },
+      {
+        "bin_lower": 2409.6,
+        "bin_upper": 2536.2,
+        "count": 32
+      },
+      {
+        "bin_lower": 2536.2,
+        "bin_upper": 2662.7999999999997,
+        "count": 10
+      },
+      {
+        "bin_lower": 2662.7999999999997,
+        "bin_upper": 2789.4,
+        "count": 7
+      },
+      {
+        "bin_lower": 2789.4,
+        "bin_upper": 2916.0,
+        "count": 3
+      }
+    ],
+    "height_histogram": [
+      {
+        "bin_lower": 127.0,
+        "bin_upper": 256.3,
+        "count": 59
+      },
+      {
+        "bin_lower": 256.3,
+        "bin_upper": 385.6,
+        "count": 46
+      },
+      {
+        "bin_lower": 385.6,
+        "bin_upper": 514.9000000000001,
+        "count": 204
+      },
+      {
+        "bin_lower": 514.9000000000001,
+        "bin_upper": 644.2,
+        "count": 785
+      },
+      {
+        "bin_lower": 644.2,
+        "bin_upper": 773.5,
+        "count": 1052
+      },
+      {
+        "bin_lower": 773.5,
+        "bin_upper": 902.8000000000001,
+        "count": 867
+      },
+      {
+        "bin_lower": 902.8000000000001,
+        "bin_upper": 1032.1000000000001,
+        "count": 661
+      },
+      {
+        "bin_lower": 1032.1000000000001,
+        "bin_upper": 1161.4,
+        "count": 598
+      },
+      {
+        "bin_lower": 1161.4,
+        "bin_upper": 1290.7,
+        "count": 471
+      },
+      {
+        "bin_lower": 1290.7,
+        "bin_upper": 1420.0,
+        "count": 375
+      },
+      {
+        "bin_lower": 1420.0,
+        "bin_upper": 1549.3000000000002,
+        "count": 263
+      },
+      {
+        "bin_lower": 1549.3000000000002,
+        "bin_upper": 1678.6000000000001,
+        "count": 166
+      },
+      {
+        "bin_lower": 1678.6000000000001,
+        "bin_upper": 1807.9,
+        "count": 112
+      },
+      {
+        "bin_lower": 1807.9,
+        "bin_upper": 1937.2000000000003,
+        "count": 71
+      },
+      {
+        "bin_lower": 1937.2000000000003,
+        "bin_upper": 2066.5,
+        "count": 45
+      },
+      {
+        "bin_lower": 2066.5,
+        "bin_upper": 2195.8,
+        "count": 35
+      },
+      {
+        "bin_lower": 2195.8,
+        "bin_upper": 2325.1000000000004,
+        "count": 18
+      },
+      {
+        "bin_lower": 2325.1000000000004,
+        "bin_upper": 2454.4,
+        "count": 13
+      },
+      {
+        "bin_lower": 2454.4,
+        "bin_upper": 2583.7000000000003,
+        "count": 10
+      },
+      {
+        "bin_lower": 2583.7000000000003,
+        "bin_upper": 2713.0,
+        "count": 5
+      }
+    ]
+  },
+  "image_modes": {
+    "L": 5573,
+    "RGB": 283
+  },
+  "quality": {
+    "brightness": {
+      "mean": 0.48151478751637417,
+      "std": 0.07212411135896547,
+      "histogram": [
+        {
+          "bin_lower": 0.2302861410611542,
+          "bin_upper": 0.26221038761135596,
+          "count": 6
+        },
+        {
+          "bin_lower": 0.26221038761135596,
+          "bin_upper": 0.2941346341615577,
+          "count": 36
+        },
+        {
+          "bin_lower": 0.2941346341615577,
+          "bin_upper": 0.32605888071175954,
+          "count": 93
+        },
+        {
+          "bin_lower": 0.32605888071175954,
+          "bin_upper": 0.3579831272619613,
+          "count": 155
+        },
+        {
+          "bin_lower": 0.3579831272619613,
+          "bin_upper": 0.38990737381216306,
+          "count": 270
+        },
+        {
+          "bin_lower": 0.38990737381216306,
+          "bin_upper": 0.4218316203623649,
+          "count": 522
+        },
+        {
+          "bin_lower": 0.4218316203623649,
+          "bin_upper": 0.45375586691256664,
+          "count": 899
+        },
+        {
+          "bin_lower": 0.45375586691256664,
+          "bin_upper": 0.4856801134627684,
+          "count": 1097
+        },
+        {
+          "bin_lower": 0.4856801134627684,
+          "bin_upper": 0.5176043600129702,
+          "count": 1074
+        },
+        {
+          "bin_lower": 0.5176043600129702,
+          "bin_upper": 0.5495286065631719,
+          "count": 737
+        },
+        {
+          "bin_lower": 0.5495286065631719,
+          "bin_upper": 0.5814528531133738,
+          "count": 510
+        },
+        {
+          "bin_lower": 0.5814528531133738,
+          "bin_upper": 0.6133770996635755,
+          "count": 257
+        },
+        {
+          "bin_lower": 0.6133770996635755,
+          "bin_upper": 0.6453013462137773,
+          "count": 123
+        },
+        {
+          "bin_lower": 0.6453013462137773,
+          "bin_upper": 0.6772255927639791,
+          "count": 55
+        },
+        {
+          "bin_lower": 0.6772255927639791,
+          "bin_upper": 0.7091498393141809,
+          "count": 12
+        },
+        {
+          "bin_lower": 0.7091498393141809,
+          "bin_upper": 0.7410740858643826,
+          "count": 7
+        },
+        {
+          "bin_lower": 0.7410740858643826,
+          "bin_upper": 0.7729983324145844,
+          "count": 1
+        },
+        {
+          "bin_lower": 0.7729983324145844,
+          "bin_upper": 0.8049225789647861,
+          "count": 1
+        },
+        {
+          "bin_lower": 0.8049225789647861,
+          "bin_upper": 0.8368468255149879,
+          "count": 0
+        },
+        {
+          "bin_lower": 0.8368468255149879,
+          "bin_upper": 0.8687710720651897,
+          "count": 1
+        }
+      ]
+    },
+    "contrast": {
+      "mean": 0.2234898166457718,
+      "std": 0.03684996735267581,
+      "histogram": [
+        {
+          "bin_lower": 0.08006021325313332,
+          "bin_upper": 0.09321022667222055,
+          "count": 4
+        },
+        {
+          "bin_lower": 0.09321022667222055,
+          "bin_upper": 0.10636024009130779,
+          "count": 6
+        },
+        {
+          "bin_lower": 0.10636024009130779,
+          "bin_upper": 0.11951025351039501,
+          "count": 17
+        },
+        {
+          "bin_lower": 0.11951025351039501,
+          "bin_upper": 0.13266026692948224,
+          "count": 48
+        },
+        {
+          "bin_lower": 0.13266026692948224,
+          "bin_upper": 0.14581028034856947,
+          "count": 70
+        },
+        {
+          "bin_lower": 0.14581028034856947,
+          "bin_upper": 0.1589602937676567,
+          "count": 119
+        },
+        {
+          "bin_lower": 0.1589602937676567,
+          "bin_upper": 0.17211030718674394,
+          "count": 203
+        },
+        {
+          "bin_lower": 0.17211030718674394,
+          "bin_upper": 0.18526032060583117,
+          "count": 402
+        },
+        {
+          "bin_lower": 0.18526032060583117,
+          "bin_upper": 0.1984103340249184,
+          "count": 570
+        },
+        {
+          "bin_lower": 0.1984103340249184,
+          "bin_upper": 0.21156034744400565,
+          "count": 713
+        },
+        {
+          "bin_lower": 0.21156034744400565,
+          "bin_upper": 0.22471036086309287,
+          "count": 769
+        },
+        {
+          "bin_lower": 0.22471036086309287,
+          "bin_upper": 0.2378603742821801,
+          "count": 813
+        },
+        {
+          "bin_lower": 0.2378603742821801,
+          "bin_upper": 0.2510103877012673,
+          "count": 731
+        },
+        {
+          "bin_lower": 0.2510103877012673,
+          "bin_upper": 0.26416040112035455,
+          "count": 620
+        },
+        {
+          "bin_lower": 0.26416040112035455,
+          "bin_upper": 0.2773104145394418,
+          "count": 386
+        },
+        {
+          "bin_lower": 0.2773104145394418,
+          "bin_upper": 0.290460427958529,
+          "count": 224
+        },
+        {
+          "bin_lower": 0.290460427958529,
+          "bin_upper": 0.3036104413776162,
+          "count": 110
+        },
+        {
+          "bin_lower": 0.3036104413776162,
+          "bin_upper": 0.31676045479670345,
+          "count": 41
+        },
+        {
+          "bin_lower": 0.31676045479670345,
+          "bin_upper": 0.32991046821579073,
+          "count": 7
+        },
+        {
+          "bin_lower": 0.32991046821579073,
+          "bin_upper": 0.34306048163487796,
+          "count": 3
+        }
+      ]
+    },
+    "intensity_entropy": {
+      "mean": 7.28566144171956,
+      "std": 0.22802389081944083,
+      "histogram": [
+        {
+          "bin_lower": 6.004755078540198,
+          "bin_upper": 6.09659640346288,
+          "count": 3
+        },
+        {
+          "bin_lower": 6.09659640346288,
+          "bin_upper": 6.188437728385561,
+          "count": 4
+        },
+        {
+          "bin_lower": 6.188437728385561,
+          "bin_upper": 6.280279053308243,
+          "count": 6
+        },
+        {
+          "bin_lower": 6.280279053308243,
+          "bin_upper": 6.372120378230925,
+          "count": 9
+        },
+        {
+          "bin_lower": 6.372120378230925,
+          "bin_upper": 6.463961703153607,
+          "count": 14
+        },
+        {
+          "bin_lower": 6.463961703153607,
+          "bin_upper": 6.555803028076289,
+          "count": 18
+        },
+        {
+          "bin_lower": 6.555803028076289,
+          "bin_upper": 6.64764435299897,
+          "count": 42
+        },
+        {
+          "bin_lower": 6.64764435299897,
+          "bin_upper": 6.739485677921652,
+          "count": 69
+        },
+        {
+          "bin_lower": 6.739485677921652,
+          "bin_upper": 6.831327002844334,
+          "count": 102
+        },
+        {
+          "bin_lower": 6.831327002844334,
+          "bin_upper": 6.923168327767016,
+          "count": 152
+        },
+        {
+          "bin_lower": 6.923168327767016,
+          "bin_upper": 7.015009652689697,
+          "count": 274
+        },
+        {
+          "bin_lower": 7.015009652689697,
+          "bin_upper": 7.106850977612379,
+          "count": 370
+        },
+        {
+          "bin_lower": 7.106850977612379,
+          "bin_upper": 7.198692302535061,
+          "count": 585
+        },
+        {
+          "bin_lower": 7.198692302535061,
+          "bin_upper": 7.290533627457743,
+          "count": 821
+        },
+        {
+          "bin_lower": 7.290533627457743,
+          "bin_upper": 7.382374952380425,
+          "count": 1184
+        },
+        {
+          "bin_lower": 7.382374952380425,
+          "bin_upper": 7.474216277303107,
+          "count": 1149
+        },
+        {
+          "bin_lower": 7.474216277303107,
+          "bin_upper": 7.566057602225788,
+          "count": 703
+        },
+        {
+          "bin_lower": 7.566057602225788,
+          "bin_upper": 7.65789892714847,
+          "count": 263
+        },
+        {
+          "bin_lower": 7.65789892714847,
+          "bin_upper": 7.749740252071152,
+          "count": 83
+        },
+        {
+          "bin_lower": 7.749740252071152,
+          "bin_upper": 7.841581576993834,
+          "count": 5
+        }
+      ]
+    },
+    "by_class": {
+      "NORMAL": {
+        "brightness": 0.4809185877909642,
+        "contrast": 0.24025702489022238,
+        "width": 1654.0,
+        "height": 1323.0
+      },
+      "PNEUMONIA": {
+        "brightness": 0.48173565907390387,
+        "contrast": 0.21727814085570268,
+        "width": 1160.0,
+        "height": 776.0
+      }
+    }
+  },
+  "duplicates": {
+    "exact_duplicate_images": 62,
+    "exact_duplicate_groups": 30,
+    "near_duplicate_pairs": 34,
+    "near_duplicate_method": "Pearson correlation of 32x32 thumbnails >= 0.985",
+    "exact_duplicate_groups_across_patient_disjoint_splits": 0,
+    "near_duplicate_pairs_cross_patient": 1,
+    "near_duplicate_pairs_across_patient_disjoint_splits": 0,
+    "near_duplicate_pairs_across_flawed_splits": 16
+  }
+}
