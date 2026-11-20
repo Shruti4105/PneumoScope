@@ -1,0 +1,31 @@
+Loaded cached features D:\backup\Python\Computer Science Project\Pneumonia\data\features\kermany_resnet50.npz
+Patient-disjoint split: train 4182, val 837, test 837
+Optuna: 25 trials ...
+Best params: {'lr': 0.0007641361869233315, 'weight_decay': 0.0048696409415209, 'dropout': 0.2353970008207678, 'hidden': 512} val NLL 0.0982
+  epoch 00 train 0.1487 val 0.1618
+  epoch 01 train 0.0936 val 0.1403
+  epoch 02 train 0.0783 val 0.1210
+  epoch 03 train 0.0725 val 0.1167
+  epoch 04 train 0.0680 val 0.1170
+  epoch 05 train 0.0606 val 0.1086
+  epoch 06 train 0.0557 val 0.1026
+  epoch 07 train 0.0592 val 0.0991
+  epoch 08 train 0.0477 val 0.1169
+  epoch 09 train 0.0514 val 0.1054
+  epoch 10 train 0.0452 val 0.1297
+  epoch 11 train 0.0474 val 0.0981
+  epoch 12 train 0.0463 val 0.1079
+  epoch 13 train 0.0450 val 0.0947
+  epoch 14 train 0.0434 val 0.0997
+  epoch 15 train 0.0395 val 0.1415
+  epoch 16 train 0.0391 val 0.1004
+  epoch 17 train 0.0359 val 0.1620
+  epoch 18 train 0.0392 val 0.1262
+  epoch 19 train 0.0361 val 0.1092
+  epoch 20 train 0.0355 val 0.1218
+  epoch 21 train 0.0310 val 0.1047
+Temperature 0.8873; refer threshold 0.5352 (max coverage s.t. validation auto-decision error <= 1.0% (refer rate <= 30%))
+TEST  ROC-AUC 0.9884  PR-AUC 0.9954  acc 0.9534  recall 0.9623  spec 0.9295  ECE 0.0150
+FLAWED ROC-AUC 0.9916  acc 0.9558
+Bundle written: D:\backup\Python\Computer Science Project\Pneumonia\artifacts\models\v1.1.0  (config hash 563e257767a9)
+Done.
