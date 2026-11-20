@@ -1,0 +1,45 @@
+{
+  "name": "pneumonia-resnet50-mcd",
+  "version": "v1.0.0",
+  "architecture": "resnet50",
+  "backbone": "torchvision ResNet-50, ImageNet-1K V2 initialisation, frozen",
+  "head": {
+    "hidden": 512,
+    "dropout": 0.235397
+  },
+  "image_size": 224,
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "mc_passes": 30,
+  "mc_seed": 20240611,
+  "calibrated": true,
+  "temperature": 0.88735,
+  "decision_threshold": 0.5,
+  "refer_threshold": 0.96415,
+  "refer_threshold_method": "max coverage s.t. validation auto-decision error <= 3.0% (refer rate <= 30%)",
+  "uncertainty_metric": "predictive_entropy",
+  "entropy_units": "bits",
+  "refer_on_input_flags": true,
+  "training_dataset": "Kermany pediatric CXR \u2014 patient-disjoint split",
+  "trained_at": "2026-11-17T14:01:18.915359+00:00",
+  "hyperparameters": {
+    "lr": 0.00076414,
+    "weight_decay": 0.00486964,
+    "dropout": 0.235397,
+    "hidden": 512
+  },
+  "weights_file": "model.pt",
+  "weights_sha256": "500a7e41d57121ca2f201f3e37ea03948626fefcddb81cffc98e59083055a8d2",
+  "mlflow_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+  "intended_use": "Educational research demonstration only. Not for clinical use."
+}
