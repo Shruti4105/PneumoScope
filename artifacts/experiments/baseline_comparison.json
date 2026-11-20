@@ -1,0 +1,174 @@
+{
+  "split": "patient-disjoint (train 4182 / val 837 / test 837)",
+  "features": "frozen ResNet-50 ImageNet, 2048-d",
+  "selection": "validation ROC-AUC; test reported only",
+  "results": [
+    {
+      "model": "Logistic Regression",
+      "role": "baseline",
+      "params": {
+        "C": 1.0,
+        "class_weight": "balanced",
+        "max_iter": 3000,
+        "scaler": "StandardScaler"
+      },
+      "train_seconds": 0.88,
+      "inference_ms_per_image_head_only": 0.0249,
+      "validation": {
+        "accuracy": 0.9474313022700119,
+        "precision": 0.9670510708401977,
+        "recall": 0.9607201309328969,
+        "specificity": 0.911504424778761,
+        "f1": 0.9638752052545155,
+        "roc_auc": 0.9876888315977,
+        "ece": 0.034367419826265844,
+        "brier": 0.03922889050016799,
+        "confusion_matrix": {
+          "tn": 206,
+          "fp": 20,
+          "fn": 24,
+          "tp": 587
+        }
+      },
+      "test": {
+        "accuracy": 0.945041816009558,
+        "precision": 0.9653465346534653,
+        "recall": 0.9590163934426229,
+        "specificity": 0.9074889867841409,
+        "f1": 0.9621710526315789,
+        "roc_auc": 0.9828771575070413,
+        "ece": 0.044590463608867245,
+        "brier": 0.046613337567755646,
+        "confusion_matrix": {
+          "tn": 206,
+          "fp": 21,
+          "fn": 25,
+          "tp": 585
+        }
+      }
+    },
+    {
+      "model": "Random Forest",
+      "role": "comparison",
+      "params": {
+        "n_estimators": 300,
+        "max_features": "sqrt",
+        "class_weight": "balanced"
+      },
+      "train_seconds": 15.55,
+      "inference_ms_per_image_head_only": 0.3312,
+      "validation": {
+        "accuracy": 0.9354838709677419,
+        "precision": 0.9528455284552846,
+        "recall": 0.9590834697217676,
+        "specificity": 0.8716814159292036,
+        "f1": 0.9559543230016313,
+        "roc_auc": 0.9784264878409106,
+        "ece": 0.10128235762644364,
+        "brier": 0.06121215983008098,
+        "confusion_matrix": {
+          "tn": 197,
+          "fp": 29,
+          "fn": 25,
+          "tp": 586
+        }
+      },
+      "test": {
+        "accuracy": 0.9283154121863799,
+        "precision": 0.959866220735786,
+        "recall": 0.940983606557377,
+        "specificity": 0.8942731277533039,
+        "f1": 0.9503311258278146,
+        "roc_auc": 0.974817650032498,
+        "ece": 0.09915571485463957,
+        "brier": 0.0657467941059339,
+        "confusion_matrix": {
+          "tn": 203,
+          "fp": 24,
+          "fn": 36,
+          "tp": 574
+        }
+      }
+    },
+    {
+      "model": "MLP head (default params)",
+      "role": "untuned neural head",
+      "params": {
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "dropout": 0.5,
+        "hidden": 256
+      },
+      "train_seconds": 26.77,
+      "inference_ms_per_image_head_only": 0.0208,
+      "validation": {
+        "accuracy": 0.96415770609319,
+        "precision": 0.9785831960461285,
+        "recall": 0.972176759410802,
+        "specificity": 0.9424778761061947,
+        "f1": 0.9753694581280787,
+        "roc_auc": 0.9919832568109728,
+        "ece": 0.023846848668082947,
+        "brier": 0.028214762760574358,
+        "confusion_matrix": {
+          "tn": 213,
+          "fp": 13,
+          "fn": 17,
+          "tp": 594
+        }
+      },
+      "test": {
+        "accuracy": 0.945041816009558,
+        "precision": 0.9747474747474747,
+        "recall": 0.9491803278688524,
+        "specificity": 0.933920704845815,
+        "f1": 0.9617940199335548,
+        "roc_auc": 0.9890373366072074,
+        "ece": 0.02727990645875741,
+        "brier": 0.03795008078556895,
+        "confusion_matrix": {
+          "tn": 212,
+          "fp": 15,
+          "fn": 31,
+          "tp": 579
+        }
+      }
+    },
+    {
+      "model": "MC-Dropout head + Optuna + temperature (v1.1.0)",
+      "role": "final optimised model",
+      "params": {
+        "lr": 0.0007641361869233315,
+        "weight_decay": 0.0048696409415209,
+        "dropout": 0.2353970008207678,
+        "hidden": 512,
+        "mc_passes": 30,
+        "temperature": 0.8873498112651124
+      },
+      "train_seconds": null,
+      "validation": {
+        "roc_auc": 0.9926639920049825,
+        "accuracy": 0.9605734767025089,
+        "f1": 0.9728841413311422
+      },
+      "test": {
+        "accuracy": 0.953405017921147,
+        "precision": 0.9734660033167496,
+        "recall": 0.9622950819672131,
+        "specificity": 0.9295154185022027,
+        "f1": 0.9678483099752678,
+        "roc_auc": 0.9884234852314582,
+        "ece": 0.014963727598566273,
+        "brier": 0.03400428814097969,
+        "confusion_matrix": {
+          "tn": 211,
+          "fp": 16,
+          "fn": 23,
+          "tp": 587
+        }
+      },
+      "refer_rate": 0.13142174432497014,
+      "auto_accuracy": 0.9862448418156808
+    }
+  ]
+}
