@@ -1,0 +1,1384 @@
+{
+ "tracking_store": "mlflow/mlflow.db (SQLite, kept locally)",
+ "experiments": [
+  "Default",
+  "pneumonia-mc-dropout",
+  "baseline-comparison"
+ ],
+ "runs": [
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "run_name": "pneumonia-resnet50-mcd-v1.0.0",
+   "status": "FINISHED",
+   "start_time_ms": 1794923559781,
+   "end_time_ms": 1794924079094,
+   "parent_run_id": null,
+   "params": {
+    "head_lr": "0.0007641361869233315",
+    "head_weight_decay": "0.0048696409415209",
+    "head_dropout": "0.2353970008207678",
+    "head_hidden": "512",
+    "mc_passes": "30",
+    "backbone": "resnet50-frozen",
+    "split": "patient-disjoint"
+   },
+   "metrics": {
+    "test_roc_auc": 0.9884234852314582,
+    "test_pr_auc": 0.9954268235397732,
+    "test_accuracy": 0.953405017921147,
+    "test_recall": 0.9622950819672131,
+    "test_specificity": 0.9295154185022027,
+    "test_f1": 0.9678483099752678,
+    "test_ece_before_ts": 0.018962996236467033,
+    "test_ece_after_ts": 0.014963531744149466,
+    "test_brier": 0.03400425053619168,
+    "temperature": 0.8873498112651124,
+    "refer_threshold": 0.9641498491904474,
+    "test_refer_rate": 0.023894862604540025,
+    "test_entropy_error_auroc": 0.9221129747445536,
+    "flawed_split_roc_auc": 0.9915632287125415,
+    "flawed_split_accuracy": 0.955794504181601
+   },
+   "tags": {
+    "mlflow.runName": "pneumonia-resnet50-mcd-v1.0.0",
+    "model_version": "v1.0.0",
+    "weights_sha256": "500a7e41d57121ca2f201f3e37ea03948626fefcddb81cffc98e59083055a8d2"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "2720414d4468438fb2adb389287e9fc5",
+   "run_name": "optuna-trial-0",
+   "status": "FINISHED",
+   "start_time_ms": 1794923574226,
+   "end_time_ms": 1794923574279,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0003574712922600243",
+    "weight_decay": "0.006351221010640704",
+    "dropout": "0.49279757672456204",
+    "hidden": "128"
+   },
+   "metrics": {
+    "val_mc_nll": 0.13034029978979877,
+    "epochs_run": 25.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-0"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "94ef304491704003b14e5a4c7edb78f8",
+   "run_name": "optuna-trial-1",
+   "status": "FINISHED",
+   "start_time_ms": 1794923599169,
+   "end_time_ms": 1794923599202,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.00012184186502221769",
+    "weight_decay": "0.0029154431891537554",
+    "dropout": "0.4404460046972835",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.12401753726863551,
+    "epochs_run": 34.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-1"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "ca4e337b2bb54a77ae18832c618ac02f",
+   "run_name": "optuna-trial-2",
+   "status": "FINISHED",
+   "start_time_ms": 1794923613993,
+   "end_time_ms": 1794923614033,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0016967533607196547",
+    "weight_decay": "7.068974950624607e-06",
+    "dropout": "0.2727299868828402",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.09851931122430035,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-2"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "02e130faa1e6434b9ef25f317ac464d9",
+   "run_name": "optuna-trial-3",
+   "status": "FINISHED",
+   "start_time_ms": 1794923629864,
+   "end_time_ms": 1794923629896,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0004345454109729479",
+    "weight_decay": "1.461896279370496e-05",
+    "dropout": "0.44474115788895174",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.11228205972293435,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-3"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "fca4e3d2e3534147940cabe84dc5880a",
+   "run_name": "optuna-trial-4",
+   "status": "FINISHED",
+   "start_time_ms": 1794923640178,
+   "end_time_ms": 1794923640214,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.000471705203762518",
+    "weight_decay": "0.0013826232179369874",
+    "dropout": "0.2798695128633439",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10261908485555946,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-4"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "28b2a19fa9df44bd9ff6705b41047df2",
+   "run_name": "optuna-trial-5",
+   "status": "FINISHED",
+   "start_time_ms": 1794923649428,
+   "end_time_ms": 1794923649465,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0007896186801026692",
+    "weight_decay": "4.809461967501575e-06",
+    "dropout": "0.2260206371941118",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10198206151437106,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-5"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "03f6a68b12064cc28fedd7ec89df123d",
+   "run_name": "optuna-trial-6",
+   "status": "FINISHED",
+   "start_time_ms": 1794923668839,
+   "end_time_ms": 1794923668877,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.00028180680291847244",
+    "weight_decay": "2.4586032763280077e-06",
+    "dropout": "0.47369321060486275",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.11580237273665338,
+    "epochs_run": 25.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-6"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "d74e10afbb0d41748c222fe690a0604a",
+   "run_name": "optuna-trial-7",
+   "status": "FINISHED",
+   "start_time_ms": 1794923688493,
+   "end_time_ms": 1794923688535,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.00011240768803005555",
+    "weight_decay": "0.004337920697490943",
+    "dropout": "0.3035119926400068",
+    "hidden": "128"
+   },
+   "metrics": {
+    "val_mc_nll": 0.11546311888168469,
+    "epochs_run": 60.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-7"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "faac91b5ac30491a859757d8ebe0347b",
+   "run_name": "optuna-trial-8",
+   "status": "FINISHED",
+   "start_time_ms": 1794923700167,
+   "end_time_ms": 1794923700200,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.000642033033629786",
+    "weight_decay": "5.4880470007660465e-06",
+    "dropout": "0.5878338511058234",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.12462243096032889,
+    "epochs_run": 27.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-8"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "f1f8501f99d94d33910cabed36f1fbfd",
+   "run_name": "optuna-trial-9",
+   "status": "FINISHED",
+   "start_time_ms": 1794923714362,
+   "end_time_ms": 1794923714412,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0007641361869233315",
+    "weight_decay": "0.0048696409415209",
+    "dropout": "0.2353970008207678",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.0982461121584922,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-9"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "ffea4d6dd9284e3fb21df74a166cd194",
+   "run_name": "optuna-trial-10",
+   "status": "FINISHED",
+   "start_time_ms": 1794923721980,
+   "end_time_ms": 1794923722017,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0018376569837039074",
+    "weight_decay": "0.004045897835122559",
+    "dropout": "0.23765685818697974",
+    "hidden": "128"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10106697278101136,
+    "epochs_run": 23.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-10"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "230350e6cad74520923bcb4975094c56",
+   "run_name": "optuna-trial-11",
+   "status": "FINISHED",
+   "start_time_ms": 1794923735876,
+   "end_time_ms": 1794923735946,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0009666892674164826",
+    "weight_decay": "0.00020528949275304626",
+    "dropout": "0.3409674679222897",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10214475227339594,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-11"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "d1765c64a3974c5dade337f2beeb8476",
+   "run_name": "optuna-trial-12",
+   "status": "FINISHED",
+   "start_time_ms": 1794923747830,
+   "end_time_ms": 1794923747947,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0025436404383127557",
+    "weight_decay": "3.291692996977937e-05",
+    "dropout": "0.22218582601086076",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10148043917786334,
+    "epochs_run": 19.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-12"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "74051c23d3ae45b69cb4be8852a2324f",
+   "run_name": "optuna-trial-13",
+   "status": "FINISHED",
+   "start_time_ms": 1794923765541,
+   "end_time_ms": 1794923765582,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0021448594038200935",
+    "weight_decay": "6.06243812062897e-06",
+    "dropout": "0.3721051607400854",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10065722228091178,
+    "epochs_run": 28.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-13"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "94100aa57c0d4d22b3709bc4e76d3dc7",
+   "run_name": "optuna-trial-14",
+   "status": "FINISHED",
+   "start_time_ms": 1794923778207,
+   "end_time_ms": 1794923778239,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0009844288251675823",
+    "weight_decay": "1.5996763980323798e-05",
+    "dropout": "0.2746989513261354",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10348792150362736,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-14"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "a6e9dc798ac84858be05e983f2e4a71d",
+   "run_name": "optuna-trial-15",
+   "status": "FINISHED",
+   "start_time_ms": 1794923790811,
+   "end_time_ms": 1794923790846,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0007836618657402618",
+    "weight_decay": "0.006108454422576168",
+    "dropout": "0.2606408930685886",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10238791339452352,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-15"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "3593842a458f4d258b5f75f954663cd1",
+   "run_name": "optuna-trial-16",
+   "status": "FINISHED",
+   "start_time_ms": 1794923805896,
+   "end_time_ms": 1794923805938,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.000261846501899643",
+    "weight_decay": "1.568147616316922e-06",
+    "dropout": "0.22547273646424354",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10483635594898877,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-16"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "34b044ca8dc84c56999262c49f2bd15d",
+   "run_name": "optuna-trial-17",
+   "status": "FINISHED",
+   "start_time_ms": 1794923832071,
+   "end_time_ms": 1794923832120,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0019788672973242863",
+    "weight_decay": "0.0002086425077437837",
+    "dropout": "0.3386880272242122",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10006747223788728,
+    "epochs_run": 23.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-17"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "c6c17ae0e78a4d1faf7163a43dcc0c01",
+   "run_name": "optuna-trial-18",
+   "status": "FINISHED",
+   "start_time_ms": 1794923851913,
+   "end_time_ms": 1794923851986,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0007602177671986383",
+    "weight_decay": "0.0006277581500200063",
+    "dropout": "0.25375521433007736",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10089324357418496,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-18"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "4c30ba332278409f8720e3c90792c244",
+   "run_name": "optuna-trial-19",
+   "status": "FINISHED",
+   "start_time_ms": 1794923881473,
+   "end_time_ms": 1794923881526,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0014543084484866",
+    "weight_decay": "0.0011657730319819637",
+    "dropout": "0.25652041179987517",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.0998066908034552,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-19"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "a021051c17404e8aa2a77fbb9567459c",
+   "run_name": "optuna-trial-20",
+   "status": "FINISHED",
+   "start_time_ms": 1794923901859,
+   "end_time_ms": 1794923901912,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0003218012296275675",
+    "weight_decay": "8.389392463654529e-05",
+    "dropout": "0.20287664982036258",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10416772914672097,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-20"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "c678092989e2424ebe725ff753485503",
+   "run_name": "optuna-trial-21",
+   "status": "FINISHED",
+   "start_time_ms": 1794923928193,
+   "end_time_ms": 1794923928232,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.00182489061254796",
+    "weight_decay": "0.006805372184196732",
+    "dropout": "0.29632723187340443",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10326997625114005,
+    "epochs_run": 23.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-21"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "4e40cb7fc1f04269938b0467f5fdec42",
+   "run_name": "optuna-trial-22",
+   "status": "FINISHED",
+   "start_time_ms": 1794923946550,
+   "end_time_ms": 1794923946614,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.001020955445525774",
+    "weight_decay": "0.004202596864840037",
+    "dropout": "0.20614772703293988",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.09911692043001848,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-22"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "b08bfe41e12d4e1f85f91ca8ef6316eb",
+   "run_name": "optuna-trial-23",
+   "status": "FINISHED",
+   "start_time_ms": 1794923963579,
+   "end_time_ms": 1794923963623,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.00037779796489754075",
+    "weight_decay": "0.0022347237316179577",
+    "dropout": "0.24477907955494757",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10517260944234291,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-23"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "626b19e935374e20ba6b1450ae6761f2",
+   "run_name": "optuna-trial-24",
+   "status": "FINISHED",
+   "start_time_ms": 1794923974103,
+   "end_time_ms": 1794923974150,
+   "parent_run_id": "b5fbfdb5da994c5e94fe30cfce32178e",
+   "params": {
+    "lr": "0.0013791563539080893",
+    "weight_decay": "0.0004543889464243283",
+    "dropout": "0.20269541362036314",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10325788348959408,
+    "epochs_run": 15.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "b5fbfdb5da994c5e94fe30cfce32178e",
+    "mlflow.runName": "optuna-trial-24"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "run_name": "pneumonia-resnet50-mcd-v1.1.0",
+   "status": "FINISHED",
+   "start_time_ms": 1794924472459,
+   "end_time_ms": 1794924967690,
+   "parent_run_id": null,
+   "params": {
+    "head_lr": "0.0007641361869233315",
+    "head_weight_decay": "0.0048696409415209",
+    "head_dropout": "0.2353970008207678",
+    "head_hidden": "512",
+    "mc_passes": "30",
+    "backbone": "resnet50-frozen",
+    "split": "patient-disjoint"
+   },
+   "metrics": {
+    "test_roc_auc": 0.9884234852314582,
+    "test_pr_auc": 0.9954268235397732,
+    "test_accuracy": 0.953405017921147,
+    "test_recall": 0.9622950819672131,
+    "test_specificity": 0.9295154185022027,
+    "test_f1": 0.9678483099752678,
+    "test_ece_before_ts": 0.018962996236467033,
+    "test_ece_after_ts": 0.014963531744149466,
+    "test_brier": 0.03400425053619168,
+    "temperature": 0.8873498112651124,
+    "refer_threshold": 0.5351788195656076,
+    "test_refer_rate": 0.13142174432497014,
+    "test_entropy_error_auroc": 0.9221129747445536,
+    "flawed_split_roc_auc": 0.9915632287125415,
+    "flawed_split_accuracy": 0.955794504181601
+   },
+   "tags": {
+    "mlflow.runName": "pneumonia-resnet50-mcd-v1.1.0",
+    "model_version": "v1.1.0",
+    "weights_sha256": "500a7e41d57121ca2f201f3e37ea03948626fefcddb81cffc98e59083055a8d2"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "6b6bc1eefe374ba19bc7c581440f712e",
+   "run_name": "optuna-trial-0",
+   "status": "FINISHED",
+   "start_time_ms": 1794924482060,
+   "end_time_ms": 1794924482103,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0003574712922600243",
+    "weight_decay": "0.006351221010640704",
+    "dropout": "0.49279757672456204",
+    "hidden": "128"
+   },
+   "metrics": {
+    "val_mc_nll": 0.13034029978979877,
+    "epochs_run": 25.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-0"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "f7ea5ea81f8f4814a673bfa2d5f1d093",
+   "run_name": "optuna-trial-1",
+   "status": "FINISHED",
+   "start_time_ms": 1794924505311,
+   "end_time_ms": 1794924505357,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.00012184186502221769",
+    "weight_decay": "0.0029154431891537554",
+    "dropout": "0.4404460046972835",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.12401753726863551,
+    "epochs_run": 34.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-1"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "8236aec517084f8ebb4d5e7db9816ae6",
+   "run_name": "optuna-trial-2",
+   "status": "FINISHED",
+   "start_time_ms": 1794924520921,
+   "end_time_ms": 1794924520961,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0016967533607196547",
+    "weight_decay": "7.068974950624607e-06",
+    "dropout": "0.2727299868828402",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.09851931122430035,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-2"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "ef32e05a0c4d47b5bc26e73285456d76",
+   "run_name": "optuna-trial-3",
+   "status": "FINISHED",
+   "start_time_ms": 1794924536645,
+   "end_time_ms": 1794924536687,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0004345454109729479",
+    "weight_decay": "1.461896279370496e-05",
+    "dropout": "0.44474115788895174",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.11228205972293435,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-3"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "089ff12bbd4c455b8dee7671960056d1",
+   "run_name": "optuna-trial-4",
+   "status": "FINISHED",
+   "start_time_ms": 1794924548812,
+   "end_time_ms": 1794924548841,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.000471705203762518",
+    "weight_decay": "0.0013826232179369874",
+    "dropout": "0.2798695128633439",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10261908485555946,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-4"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "d82ee996fb0f4a86bc6bf73d35384529",
+   "run_name": "optuna-trial-5",
+   "status": "FINISHED",
+   "start_time_ms": 1794924558523,
+   "end_time_ms": 1794924558559,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0007896186801026692",
+    "weight_decay": "4.809461967501575e-06",
+    "dropout": "0.2260206371941118",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10198206151437106,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-5"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "68533b604d2c43a6a97328d9a1f17e70",
+   "run_name": "optuna-trial-6",
+   "status": "FINISHED",
+   "start_time_ms": 1794924575530,
+   "end_time_ms": 1794924575564,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.00028180680291847244",
+    "weight_decay": "2.4586032763280077e-06",
+    "dropout": "0.47369321060486275",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.11580237273665338,
+    "epochs_run": 25.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-6"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "064c7ddef56c4845a0f8fa617dc6465e",
+   "run_name": "optuna-trial-7",
+   "status": "FINISHED",
+   "start_time_ms": 1794924596732,
+   "end_time_ms": 1794924596768,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.00011240768803005555",
+    "weight_decay": "0.004337920697490943",
+    "dropout": "0.3035119926400068",
+    "hidden": "128"
+   },
+   "metrics": {
+    "val_mc_nll": 0.11546311888168469,
+    "epochs_run": 60.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-7"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "1aac385027bf4996954281a9af3e6ef7",
+   "run_name": "optuna-trial-8",
+   "status": "FINISHED",
+   "start_time_ms": 1794924610057,
+   "end_time_ms": 1794924610112,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.000642033033629786",
+    "weight_decay": "5.4880470007660465e-06",
+    "dropout": "0.5878338511058234",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.12462243096032889,
+    "epochs_run": 27.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-8"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "c943a667fe114c79b5a2768e79c3bcdf",
+   "run_name": "optuna-trial-9",
+   "status": "FINISHED",
+   "start_time_ms": 1794924625580,
+   "end_time_ms": 1794924625629,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0007641361869233315",
+    "weight_decay": "0.0048696409415209",
+    "dropout": "0.2353970008207678",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.0982461121584922,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-9"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "cbf658745dd14234a6a31ab2dccb3011",
+   "run_name": "optuna-trial-10",
+   "status": "FINISHED",
+   "start_time_ms": 1794924634497,
+   "end_time_ms": 1794924634538,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0018376569837039074",
+    "weight_decay": "0.004045897835122559",
+    "dropout": "0.23765685818697974",
+    "hidden": "128"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10106697278101136,
+    "epochs_run": 23.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-10"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "dc00716c01c44f5a974b2a74bd7afaef",
+   "run_name": "optuna-trial-11",
+   "status": "FINISHED",
+   "start_time_ms": 1794924651169,
+   "end_time_ms": 1794924651223,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0009666892674164826",
+    "weight_decay": "0.00020528949275304626",
+    "dropout": "0.3409674679222897",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10214475227339594,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-11"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "4f46705994be42929a030b71cbc1cbd3",
+   "run_name": "optuna-trial-12",
+   "status": "FINISHED",
+   "start_time_ms": 1794924671311,
+   "end_time_ms": 1794924671353,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0025436404383127557",
+    "weight_decay": "3.291692996977937e-05",
+    "dropout": "0.22218582601086076",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10148043917786334,
+    "epochs_run": 19.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-12"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "1da752ae56d744e19a8787cd0072a91f",
+   "run_name": "optuna-trial-13",
+   "status": "FINISHED",
+   "start_time_ms": 1794924693608,
+   "end_time_ms": 1794924693651,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0021448594038200935",
+    "weight_decay": "6.06243812062897e-06",
+    "dropout": "0.3721051607400854",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10065722228091178,
+    "epochs_run": 28.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-13"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "8532b7f2abdc44c18a1a4ef1830b455e",
+   "run_name": "optuna-trial-14",
+   "status": "FINISHED",
+   "start_time_ms": 1794924707568,
+   "end_time_ms": 1794924707604,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0009844288251675823",
+    "weight_decay": "1.5996763980323798e-05",
+    "dropout": "0.2746989513261354",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10348792150362736,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-14"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "1d3ae7c42f7a43d980e1eb9e59d2e080",
+   "run_name": "optuna-trial-15",
+   "status": "FINISHED",
+   "start_time_ms": 1794924725718,
+   "end_time_ms": 1794924725922,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0007836618657402618",
+    "weight_decay": "0.006108454422576168",
+    "dropout": "0.2606408930685886",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10238791339452352,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-15"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "1a54313c1703438da87cad79f59e363f",
+   "run_name": "optuna-trial-16",
+   "status": "FINISHED",
+   "start_time_ms": 1794924762452,
+   "end_time_ms": 1794924762525,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.000261846501899643",
+    "weight_decay": "1.568147616316922e-06",
+    "dropout": "0.22547273646424354",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10483635594898877,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-16"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "35e874838d33468f9f2f59c9e4d0f07c",
+   "run_name": "optuna-trial-17",
+   "status": "FINISHED",
+   "start_time_ms": 1794924781532,
+   "end_time_ms": 1794924781577,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0019788672973242863",
+    "weight_decay": "0.0002086425077437837",
+    "dropout": "0.3386880272242122",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10006747223788728,
+    "epochs_run": 23.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-17"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "e5eee15c6e0243d2be97ca84934523f8",
+   "run_name": "optuna-trial-18",
+   "status": "FINISHED",
+   "start_time_ms": 1794924797971,
+   "end_time_ms": 1794924798023,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0007602177671986383",
+    "weight_decay": "0.0006277581500200063",
+    "dropout": "0.25375521433007736",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10089324357418496,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-18"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "af9f13b0cc164d0496d369827537b643",
+   "run_name": "optuna-trial-19",
+   "status": "FINISHED",
+   "start_time_ms": 1794924813719,
+   "end_time_ms": 1794924813756,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0014543084484866",
+    "weight_decay": "0.0011657730319819637",
+    "dropout": "0.25652041179987517",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.0998066908034552,
+    "epochs_run": 22.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-19"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "50494d2a53e04751913863493b539616",
+   "run_name": "optuna-trial-20",
+   "status": "FINISHED",
+   "start_time_ms": 1794924834523,
+   "end_time_ms": 1794924834573,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0003218012296275675",
+    "weight_decay": "8.389392463654529e-05",
+    "dropout": "0.20287664982036258",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10416772914672097,
+    "epochs_run": 24.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-20"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "6c1ef6f9da67445397023ff33eab35cb",
+   "run_name": "optuna-trial-21",
+   "status": "FINISHED",
+   "start_time_ms": 1794924854366,
+   "end_time_ms": 1794924854417,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.00182489061254796",
+    "weight_decay": "0.006805372184196732",
+    "dropout": "0.29632723187340443",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10326997625114005,
+    "epochs_run": 23.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-21"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "ab8440ba9d754f00b0fe64887c43cd16",
+   "run_name": "optuna-trial-22",
+   "status": "FINISHED",
+   "start_time_ms": 1794924868333,
+   "end_time_ms": 1794924868369,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.001020955445525774",
+    "weight_decay": "0.004202596864840037",
+    "dropout": "0.20614772703293988",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.09911692043001848,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-22"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "90b1ffda4c404ef897a55321e11810c3",
+   "run_name": "optuna-trial-23",
+   "status": "FINISHED",
+   "start_time_ms": 1794924883132,
+   "end_time_ms": 1794924883170,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.00037779796489754075",
+    "weight_decay": "0.0022347237316179577",
+    "dropout": "0.24477907955494757",
+    "hidden": "512"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10517260944234291,
+    "epochs_run": 20.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-23"
+   }
+  },
+  {
+   "experiment": "pneumonia-mc-dropout",
+   "run_id": "cdb12d904f2c45fc95cee212ab478947",
+   "run_name": "optuna-trial-24",
+   "status": "FINISHED",
+   "start_time_ms": 1794924890990,
+   "end_time_ms": 1794924891033,
+   "parent_run_id": "45a89990764942db9e2dbfa9b6176a70",
+   "params": {
+    "lr": "0.0013791563539080893",
+    "weight_decay": "0.0004543889464243283",
+    "dropout": "0.20269541362036314",
+    "hidden": "256"
+   },
+   "metrics": {
+    "val_mc_nll": 0.10325788348959408,
+    "epochs_run": 15.0
+   },
+   "tags": {
+    "mlflow.parentRunId": "45a89990764942db9e2dbfa9b6176a70",
+    "mlflow.runName": "optuna-trial-24"
+   }
+  },
+  {
+   "experiment": "baseline-comparison",
+   "run_id": "350ea611fb77479ca69f9104b8af76d4",
+   "run_name": "Logistic Regression",
+   "status": "FINISHED",
+   "start_time_ms": 1795093232927,
+   "end_time_ms": 1795093232989,
+   "parent_run_id": null,
+   "params": {
+    "C": "1.0",
+    "class_weight": "balanced",
+    "max_iter": "3000",
+    "scaler": "StandardScaler",
+    "role": "baseline"
+   },
+   "metrics": {
+    "test_accuracy": 0.945041816009558,
+    "test_precision": 0.9653465346534653,
+    "test_recall": 0.9590163934426229,
+    "test_specificity": 0.9074889867841409,
+    "test_f1": 0.9621710526315789,
+    "test_roc_auc": 0.9828771575070413,
+    "test_ece": 0.044590463608867245,
+    "test_brier": 0.046613337567755646,
+    "val_accuracy": 0.9474313022700119,
+    "val_precision": 0.9670510708401977,
+    "val_recall": 0.9607201309328969,
+    "val_specificity": 0.911504424778761,
+    "val_f1": 0.9638752052545155,
+    "val_roc_auc": 0.9876888315977,
+    "val_ece": 0.034367419826265844,
+    "val_brier": 0.03922889050016799
+   },
+   "tags": {
+    "mlflow.runName": "Logistic Regression"
+   }
+  },
+  {
+   "experiment": "baseline-comparison",
+   "run_id": "85689eb112e943108630dea01d52f5e0",
+   "run_name": "Random Forest",
+   "status": "FINISHED",
+   "start_time_ms": 1795093233014,
+   "end_time_ms": 1795093233048,
+   "parent_run_id": null,
+   "params": {
+    "n_estimators": "300",
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "role": "comparison"
+   },
+   "metrics": {
+    "test_accuracy": 0.9283154121863799,
+    "test_precision": 0.959866220735786,
+    "test_recall": 0.940983606557377,
+    "test_specificity": 0.8942731277533039,
+    "test_f1": 0.9503311258278146,
+    "test_roc_auc": 0.974817650032498,
+    "test_ece": 0.09915571485463957,
+    "test_brier": 0.0657467941059339,
+    "val_accuracy": 0.9354838709677419,
+    "val_precision": 0.9528455284552846,
+    "val_recall": 0.9590834697217676,
+    "val_specificity": 0.8716814159292036,
+    "val_f1": 0.9559543230016313,
+    "val_roc_auc": 0.9784264878409106,
+    "val_ece": 0.10128235762644364,
+    "val_brier": 0.06121215983008098
+   },
+   "tags": {
+    "mlflow.runName": "Random Forest"
+   }
+  },
+  {
+   "experiment": "baseline-comparison",
+   "run_id": "4ef5eacbfcfa43cfb4961d2294d00a87",
+   "run_name": "MLP head (default params)",
+   "status": "FINISHED",
+   "start_time_ms": 1795093233071,
+   "end_time_ms": 1795093233110,
+   "parent_run_id": null,
+   "params": {
+    "lr": "0.001",
+    "weight_decay": "0.0001",
+    "dropout": "0.5",
+    "hidden": "256",
+    "role": "untuned neural head"
+   },
+   "metrics": {
+    "test_accuracy": 0.945041816009558,
+    "test_precision": 0.9747474747474747,
+    "test_recall": 0.9491803278688524,
+    "test_specificity": 0.933920704845815,
+    "test_f1": 0.9617940199335548,
+    "test_roc_auc": 0.9890373366072074,
+    "test_ece": 0.02727990645875741,
+    "test_brier": 0.03795008078556895,
+    "val_accuracy": 0.96415770609319,
+    "val_precision": 0.9785831960461285,
+    "val_recall": 0.972176759410802,
+    "val_specificity": 0.9424778761061947,
+    "val_f1": 0.9753694581280787,
+    "val_roc_auc": 0.9919832568109728,
+    "val_ece": 0.023846848668082947,
+    "val_brier": 0.028214762760574358
+   },
+   "tags": {
+    "mlflow.runName": "MLP head (default params)"
+   }
+  },
+  {
+   "experiment": "baseline-comparison",
+   "run_id": "89984934af504740bf98aef1980f524f",
+   "run_name": "MC-Dropout head + Optuna + temperature (v1.1.0)",
+   "status": "FINISHED",
+   "start_time_ms": 1795093233134,
+   "end_time_ms": 1795093233169,
+   "parent_run_id": null,
+   "params": {
+    "lr": "0.0007641361869233315",
+    "weight_decay": "0.0048696409415209",
+    "dropout": "0.2353970008207678",
+    "hidden": "512",
+    "mc_passes": "30",
+    "temperature": "0.8873498112651124",
+    "role": "final optimised model"
+   },
+   "metrics": {
+    "test_accuracy": 0.953405017921147,
+    "test_precision": 0.9734660033167496,
+    "test_recall": 0.9622950819672131,
+    "test_specificity": 0.9295154185022027,
+    "test_f1": 0.9678483099752678,
+    "test_roc_auc": 0.9884234852314582,
+    "test_ece": 0.014963727598566273,
+    "test_brier": 0.03400428814097969,
+    "val_roc_auc": 0.9926639920049825,
+    "val_accuracy": 0.9605734767025089,
+    "val_f1": 0.9728841413311422
+   },
+   "tags": {
+    "mlflow.runName": "MC-Dropout head + Optuna + temperature (v1.1.0)"
+   }
+  }
+ ]
+}
